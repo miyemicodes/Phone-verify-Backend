@@ -50,4 +50,4 @@ client.calls
   "trunk_sid": null,
   "uri": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls/CAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json",
   "queue_time": "1000"
-}
+  }
