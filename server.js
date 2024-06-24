@@ -16,8 +16,8 @@ app.post('/send-otp', (req, res) => {
   console.log( req.body);
   console.log('====================================');
   const phoneNumber = req.body.phoneNumber;
-  const secret = sendOtp(phoneNumber);
-  userSecrets[phoneNumber] = secret;
+  const optData = sendOtp(phoneNumber);
+  userSecrets[phoneNumber] = optData.secretBase32;
   res.send('OTP sent successfully.');
 });
 
