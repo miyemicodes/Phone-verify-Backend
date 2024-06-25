@@ -49,7 +49,6 @@ const sendOtp = async (phoneNumber) => {
     console.log(call.sid);
 
     // Save the secret for later verification
-    // return secret.base32;
     return {
       secretBase32: secret.base32,
       // in case you need it

@@ -5,8 +5,9 @@ const verifyOtp = (token, secret) => {
     secret: secret,
     encoding: 'base32',
     token: token,
-    window: 1,
-    step: 120 // 2 minutes
+    digits: 4, // Must match the digits used for generation
+    step: 120, // Must match the step used for generation
+    window: 1, // Optional: to account for clock drift
   });
 
   return verified;

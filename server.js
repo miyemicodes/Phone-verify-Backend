@@ -11,14 +11,15 @@ app.use(bodyParser.json());
 
 let userSecrets = {}; // In-memory storage for secrets (use a database in production)
 
-app.post('/send-otp', (req, res) => {
-  console.log('================= req.body===================');
-  console.log( req.body);
-  console.log('====================================');
-  const phoneNumber = req.body.phoneNumber;
-  const optData = sendOtp(phoneNumber);
-  userSecrets[phoneNumber] = optData.secretBase32;
-  res.send('OTP sent successfully.');
+app.post('/send-otp', async (req, res) => {
+  try {
+    const phoneNumber = req.body.phoneNumber;
+    const optData = await sendOtp(phoneNumber);
+    userSecrets[phoneNumber] = optData.secretBase32;
+    res.send('OTP sent successfully.');
+  } catch (error) {
+    throw error;
+  }
 });
 
 app.post('/verify-otp', (req, res) => {
