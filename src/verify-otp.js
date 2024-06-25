@@ -5,7 +5,8 @@ const verifyOtp = (token, secret) => {
     secret: secret,
     encoding: 'base32',
     token: token,
-    window: 1
+    window: 1,
+    step: 120 // 2 minutes
   });
 
   return verified;

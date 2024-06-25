@@ -13,7 +13,8 @@ const sendOtp = async (phoneNumber) => {
     const token = speakeasy.totp({
       secret: secret.base32,
       encoding: 'base32',
-      digits: 4 // i want only 4 digits otp e.g 1274
+      digits: 4, // i want only 4 digits otp e.g 1274
+      step: 120 // 2 minutes
     });
     console.log('============token===================');
     console.log(token);
